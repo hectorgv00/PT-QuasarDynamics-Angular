@@ -3,13 +3,13 @@
   /* Colors */
   --white: #fff;
   --black: #2d2a32;
-  --pink: #E3B5CA;
+  --pink: #682744;
   --darkBlue: #356197;
   --blue: #087ca7;
 
   /* Fonts */
-    --title: 'Cairo', sans-serif;
-    --subTitle: 'Fira Sans Condensed', sans-serif;
+  --title: "Cairo", sans-serif;
+  --subTitle: "Fira Sans Condensed", sans-serif;
   /* Sizes */
   --big: 5em;
   --medium: 2.5em;
@@ -18,15 +18,6 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-.bg-gradient {
-  background: rgb(53, 97, 151);
-  background: linear-gradient(
-    90deg,
-    rgba(53, 97, 151, 1) 0%,
-    rgba(8, 124, 167, 1) 100%
-  );
 }
 
 .vh-100 {
@@ -47,8 +38,8 @@
   align-items: center;
 }
 
-.flex-column{
-    flex-direction: column;
+.flex-column {
+  flex-direction: column;
 }
 
 /* Colors */
@@ -73,6 +64,29 @@
   color: var(--blue);
 }
 
+.bg-to-color {
+    background: linear-gradient(
+        90deg,
+        rgba(53, 97, 151, 1) 0%,
+        rgb(4, 69, 93) 100%
+      );
+  background-clip: text;
+  color: transparent;
+
+}
+
+.bg-gradient {
+  background: rgb(53, 97, 151);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 97, 151, 1) 0%,
+    rgba(8, 124, 167, 1) 100%
+  );
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
 
 /* Font */
 
@@ -86,13 +100,10 @@
 
 /* --family */
 
-.ff-title{
-    font-family: var(--title);
+.ff-title {
+  font-family: var(--title);
 }
 
-.ff-subTitle{
-    font-family: var(--subTitle);
+.ff-subTitle {
+  font-family: var(--subTitle);
 }
-
-
-
