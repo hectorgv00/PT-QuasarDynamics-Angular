@@ -1,23 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
-:root{
+:root {
+  /* Colors */
+  --white: #fff;
+  --black: #2d2a32;
+  --pink: #E3B5CA;
+  --darkBlue: #356197;
+  --blue: #087ca7;
 
-    /* Colors */
-    --white:#FFF;
-    --black:#2D2A32;
-    --pink:#D387AB;
-    --darkBlue:#356197;
-    --blue:#087CA7;
-    --backgroundGradient: linear-gradient(90deg, rgba(53,97,151,1) 0%, rgba(8,124,167,1) 100%);
-    /* Fonts */
-
-
-    /* Sizes */
+  /* Fonts */
+    --title: 'Cairo', sans-serif;
+    --subTitle: 'Fira Sans Condensed', sans-serif;
+  /* Sizes */
+  --big: 5em;
+  --medium: 2.5em;
 }
 
-*{
-    margin:0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    background: var(--pink);
+
+.bg-gradient {
+  background: rgb(53, 97, 151);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 97, 151, 1) 0%,
+    rgba(8, 124, 167, 1) 100%
+  );
 }
+
+.vh-100 {
+  height: 100vh;
+}
+
+/* Flex */
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+/* Colors */
+
+.white {
+  color: var(--white);
+}
+
+.black {
+  color: var(--black);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.darkBlue {
+  color: var(--darkBlue);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+
+/* Font */
+
+/* --size */
+.fs-big {
+  font-size: var(--big);
+}
+.fs-medium {
+  font-size: var(--medium);
+}
+
+/* --family */
+
+.ff-title{
+    font-family: var(--title);
+}
+
+.ff-subTitle{
+    font-family: var(--subTitle);
+}
+
+
+
