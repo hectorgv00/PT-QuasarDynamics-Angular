@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+
+    /* Colors */
+    --white:#FFF;
+    --black:#2D2A32;
+    --pink:#D387AB;
+    --darkBlue:#356197;
+    --blue:#087CA7;
+    --backgroundGradient: linear-gradient(90deg, rgba(53,97,151,1) 0%, rgba(8,124,167,1) 100%);
+    /* Fonts */
+
+
+    /* Sizes */
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: var(--pink);
+}
