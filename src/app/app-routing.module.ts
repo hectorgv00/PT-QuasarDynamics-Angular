@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponentComponent } from './modules/home/home-component/home-component.component';
-import { SharedModule } from './shared/shared.module';
+
 
 const routes: Routes = [
   {
@@ -9,12 +8,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import ('./modules/home/home.module').then(m => m.HomeModule),
   },
-  // {
-  //   // Route "/" (Home)
-  //   path: '',
-  //   loadChildren: () =>
-  //     import('./shared/shared.module').then((m) => m.SharedModule),
-  // },
+  {
+    // Route "/auth" (Home)
+    path: 'auth',
+    loadChildren: () => import ('./modules/auth/auth.module').then(m => m.AuthModule),
+  },
 ];
 
 @NgModule({
