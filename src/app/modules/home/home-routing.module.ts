@@ -4,14 +4,24 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 
 const routes: Routes = [
   {
-    path:"",
-    component:HomeComponentComponent
+    path: 'auth',
+    loadChildren: () =>
+      import('@modules/auth/auth.module').then((m) => m.AuthModule),
+      outlet:"child",
+
+
   },
 
+  {
+    path:"",
+    component:HomeComponentComponent,
+    outlet:"child",
+
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
