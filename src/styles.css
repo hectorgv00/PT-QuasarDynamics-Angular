@@ -19,7 +19,16 @@
 * {
   margin: 0;
   padding: 0;
-  user-select: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* cursor */
+
+.pointer{
+  cursor: pointer;
 }
 
 /* Height */
@@ -125,14 +134,6 @@
 
 .bg-darkBlue {
   background-color: var(--darkBlue);
-}
-
-.bg-black {
-  background-color: var(--black);
-}
-
-.bg-white {
-  background-color: var(--white);
 }
 
 /* Font */

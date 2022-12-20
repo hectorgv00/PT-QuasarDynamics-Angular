@@ -3,17 +3,9 @@
 }
 
 .mainIconDesign{
-    width: 15vw;
+    width: 10vw;
 }
 
 .linksDesign{
     width: 50vw;
-}
-
-@media (max-width:1200px) {
-
-    .display-none{
-        display: none;
-    }
-    
 }

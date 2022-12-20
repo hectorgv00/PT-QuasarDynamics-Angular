@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,26 +9,29 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
 
-  // Header elements array
+  // Header elements array. LinksHeader => Login and Register links on header
+  Header: { linksHeader:any[], } = {linksHeader : [], }
 
+  constructor(private router:Router){}
 
-  Header: { linksHeader:any[], accessLink:any[]} = {linksHeader : [], accessLink : []}
-
-
-
+// Loads on init
   ngOnInit():void{
+
+
     this.Header.linksHeader = [
       {
         name: "logIn",
         icon: "uil uil-user",
-        router: ""
+        route: "/auth/login",
       },
       {
         name: "register",
         icon: "uil uil-user-plus",
-        router: ""
+        route: "/auth/register",
+
       },
     ]
   }
+
 
 }
