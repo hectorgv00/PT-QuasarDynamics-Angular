@@ -1,0 +1,8 @@
+.ulDesign{
+    list-style: none;
+    margin-bottom: 1vh;
+}
+
+.liDesign{
+    border: 1px solid var(--black);
+}

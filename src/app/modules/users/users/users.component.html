@@ -1,7 +1,14 @@
-<div class="vh-95">
-    <h2 class="ff-title fs-medium text-center black">List of registered people</h2>
+<div class="vh-95 d-flex flex-column align-items-center justify-content-center">
+  <h2 class="ff-title fs-medium text-center black mt-5">
+    List of registered people
+  </h2>
 
-    <ul  *ngFor="let user of userList">
-<li>Estoy aqui</li>
-</ul>
+
+  <ul *ngFor="let user of userList" class="ulDesign">
+    <li class="liDesign">{{user.id}}</li>
+    <li class="liDesign">{{user.first_name}}</li>
+    <li class="liDesign">{{user.last_name}}</li>
+    <li class="liDesign">{{user.email}}</li>
+    <li class="liDesign">{{user.avatar}}</li>
+  </ul>
 </div>

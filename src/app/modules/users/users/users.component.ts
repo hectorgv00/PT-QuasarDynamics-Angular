@@ -12,7 +12,6 @@ import { UserService } from '../services/user.service';
 export class UsersComponent {
   userList: Array<UserModel> = [];
   listObservers$: Array<Subscription> = [];
-  private readonly URL = environment.api;
 
   constructor(private userService: UserService) {}
 
@@ -23,15 +22,14 @@ export class UsersComponent {
   receiptUsers$(): void {
     // We are receiving the data from the UserService and saving it into userList
     this.userService.getAllUsers$().subscribe((r) => {
-      this.userList = [r];
+      this.userList = r;
       console.log(r)
     });
-
-    console.log(this.userList);
   }
 
-  an() {
-    console.log('a');
+
+  sumOneToPage():void{
+  this.userService.sumOneToPage()
   }
 
   ngOndestroy(): void {

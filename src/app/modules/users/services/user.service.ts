@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   private readonly URL = environment.api;
+  protected page = 1;
 
   constructor(private httpClient:HttpClient) {
     
@@ -18,12 +19,20 @@ export class UserService {
   getAllUsers$():Observable<any> {
 
     // We are calling the API and remobving the data: from the response so a clean objects array will arrieve.
-    return this.httpClient.get(`${this.URL}users?page=1`)
+    return this.httpClient.get(`${this.URL}users?page=${this.page}`)
     .pipe(
       map(({data}:any) => {
         return data
       })
     )
 
+
+  }
+
+  sumOneToPage():void{
+    this.page = this.page + 1
+    console.log(this.page)
+
+    this.getAllUsers$()
   }
 }
