@@ -1,1 +1,59 @@
-<p>register works!</p>
+<div class="vh-95 d-flex justify-content-center align-items-center">
+  <!-- Register Box -->
+
+  <div
+    class="registerBoxDesign bg-gradient d-flex flex-column align-items-center justify-content-center box-shadow"
+  >
+    <p class="ff-title white fs-medium">Register</p>
+
+    <!-- By using formGroup in our form we are letting angular know that we want to use the FormGroup propierty, specifically the one saved into formLogin The ngSubmit launches the sendLogin function -->
+    <form
+    (ngSubmit)="sendRegister()"
+      [formGroup]="formRegister"
+      class="formDesign d-flex flex-column align-items-center justify-content-evenly"
+    >
+      <!-- The form control name makes reference to each key of the object created in login.component.ts => ngOnInit -->
+      <input
+        formControlName="first_name"
+        type="text"
+        name="firstName"
+        class="inputDesign"
+        placeholder="First Name"
+      />
+      <input
+        formControlName="last_name"
+        type="text"
+        name="lastName"
+        class="inputDesign"
+        placeholder="Last Name"
+      />
+      <input
+        formControlName="email"
+        type="text"
+        name="email"
+        class="inputDesign"
+        placeholder="email"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        name="password"
+        class="inputDesign"
+        placeholder="password"
+      />
+      <button
+        [disabled]="formRegister.invalid"
+        type="submit"
+        class="bg-pink white ff-subTitle buttonDesign d-flex align-items-center justify-content-center pointer"
+      >
+        Submit
+      </button>
+    </form>
+
+    <p class="ff-subTitle white text-center">
+      You are about to enjoy User Launcher
+    </p>
+  </div>
+
+  <hr />
+</div>

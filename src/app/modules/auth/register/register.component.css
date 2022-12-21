@@ -1,0 +1,59 @@
+.registerBoxDesign{
+    width: 30vw;
+    height: 80vh;
+    border-radius: 50px;
+}
+
+.formDesign{
+    height: 50%;
+}
+
+.inputDesign{
+    width: 20vw;
+    height: 4vh;
+    border-radius: 10px;
+    text-indent: 10px;
+
+}
+
+.buttonDesign{
+    width: 5vw;
+    height: 4vh;
+    border-radius: 10px;
+}
+
+
+@media (max-width:600px) {
+    .registerBoxDesign{
+        width: 80vw;
+        height: 80vh;
+    }
+
+    .inputDesign{
+        width: 60vw;
+        height: 4vh;
+        border-radius: 10px;
+        text-indent: 10px;
+    
+    }
+    
+    .buttonDesign{
+        width: 30vw;
+        height: 4vh;
+        border-radius: 10px;
+    }
+    
+}
+
+/* Setting styles to inform the user that there is something wrong with the info he/she has inserted in the input */
+
+input.ng-invalid.ng-touched{
+    background-color:  rgb(237, 55, 55) !important;
+    text-indent: white;
+}
+
+input.ng-invalid.ng-touched::placeholder {
+    color: white;
+    opacity: 1; 
+  }
+  

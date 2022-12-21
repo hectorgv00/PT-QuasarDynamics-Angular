@@ -22,6 +22,7 @@ export class LoginComponent {
         Validators.maxLength(50),
       ]),
       password: new FormControl('', [
+        // Setting validators to the first_name input
         Validators.required,
         Validators.maxLength(50),
       ]),
