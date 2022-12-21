@@ -44,3 +44,16 @@
     }
     
 }
+
+/* Setting styles to inform the user that there is something wrong with the info he/she has inserted in the input */
+
+input.ng-invalid.ng-touched{
+    background-color:  rgb(237, 55, 55) !important;
+    text-indent: white;
+}
+
+input.ng-invalid.ng-touched::placeholder {
+    color: white;
+    opacity: 1; 
+  }
+  
