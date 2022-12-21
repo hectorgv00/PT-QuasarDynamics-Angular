@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserModel } from 'src/core/models/users.model';
+import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -11,18 +12,26 @@ import { UserService } from '../services/user.service';
 export class UsersComponent {
   userList: Array<UserModel> = [];
   listObservers$: Array<Subscription> = [];
+  private readonly URL = environment.api;
 
   constructor(private userService: UserService) {}
 
-  ngOninit(): void {
+  ngOnInit(): void {
+    this.receiptUsers$();
+  }
 
-    
+  receiptUsers$(): void {
+    // We are receiving the data from the UserService and saving it into userList
+    this.userService.getAllUsers$().subscribe((r) => {
+      this.userList = [r];
+      console.log(r)
+    });
 
-  
-  
-  
-  
-  
+    console.log(this.userList);
+  }
+
+  an() {
+    console.log('a');
   }
 
   ngOndestroy(): void {

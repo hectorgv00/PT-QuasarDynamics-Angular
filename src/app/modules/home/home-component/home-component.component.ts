@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-component.component.css']
 })
 export class HomeComponentComponent {
+constructor(){}
 
+ngOnInit():void{
+ console.log("aaa")
+}
 }
