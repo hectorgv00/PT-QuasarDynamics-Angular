@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { OnTokenService } from '@shared/services/on-token.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,10 @@ export class LoginComponent {
   // Adding FormGroup to a variable so we can use it on ngOnInit
   formLogin: FormGroup = new FormGroup({});
 
-  constructor() {}
+  constructor(
+    private _authService: AuthService,
+    private onTokenService: OnTokenService
+  ) {}
 
   ngOnInit(): void {
     // Setting the inputs our form has
@@ -29,10 +34,15 @@ export class LoginComponent {
     });
   }
 
-  sendLogin():void {
+  sendLogin(): void {
     // setting the body value to pass it to the API using the values stored in formLogin
     const body = this.formLogin.value;
-    console.log(body)
+    this._authService.sendCredentials(body);
   }
 
+  sendToken(token: string): void {
+    // Sending token to header
+    console.log(token)
+    this.onTokenService.callback.emit(token);
+  }
 }
