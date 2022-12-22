@@ -1,14 +1,31 @@
-<div class="vh-95 d-flex flex-column align-items-center justify-content-center">
+<div class="vh-95 ">
   <h2 class="ff-title fs-medium text-center black mt-5">
     List of registered people
   </h2>
 
+  <div class="grid">
+    <div *ngFor="let user of userList" class="ulDesign bg-gradient white">
+      <div>
+        <p class="liDesign ff-title extraColor">First Name</p>
+        <p class="liDesign ff-subTitle">{{ user.first_name }}</p>
+      </div>
+      <div>
+        <p class="liDesign ff-title extraColor">Email</p>
+        <p class="liDesign ff-subTitle">{{ user.email }}</p>
+      </div>
+      <div>
+        <p class="liDesign ff-title extraColor">Id</p>
+        <p class="liDesign ff-subTitle">{{ user.id }}</p>
+      </div>
+      <div>
+        <p class="liDesign ff-title extraColor">Last Name</p>
+        <p class="liDesign ff-subTitle">{{ user.last_name }}</p>
+      </div>
 
-  <ul *ngFor="let user of userList" class="ulDesign">
-    <li class="liDesign">{{user.id}}</li>
-    <li class="liDesign">{{user.first_name}}</li>
-    <li class="liDesign">{{user.last_name}}</li>
-    <li class="liDesign">{{user.email}}</li>
-    <li class="liDesign">{{user.avatar}}</li>
-  </ul>
+      <div>
+        <p class="liDesign ff-title extraColor">Avatar</p>
+        <p class="liDesign ff-subTitle">{{ user.avatar }}</p>
+      </div>
+    </div>
+  </div>
 </div>
