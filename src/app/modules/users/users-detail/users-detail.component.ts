@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserModel } from 'src/core/models/users.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
-import { catchError, map, Observable, of } from 'rxjs';
+import { map, } from 'rxjs';
 
 @Component({
   selector: 'app-users-detail',
@@ -15,7 +15,7 @@ export class UsersDetailComponent {
   private readonly URL = environment.api;
   userlist: Array<UserModel> = [];
   user: Array<UserModel> = [];
-  status:string =""
+  status: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -59,21 +59,20 @@ export class UsersDetailComponent {
     });
   }
 
-  deleteUserById(){
+  deleteUserById() {
     const routeParams = this.route.snapshot.paramMap;
     const userIdParams = Number(routeParams.get('id'));
 
     // We are sending the delete request to the api
-    this.httpClient.delete(`${this.URL}users/${userIdParams}`)
-    .subscribe({
-      next: data => {
-        this.status = `User with ID => [${userIdParams}] Deleted successfully`
-        console.log(this.status)
+    this.httpClient.delete(`${this.URL}users/${userIdParams}`).subscribe({
+      next: (data) => {
+        this.status = `User with ID => [${userIdParams}] Deleted successfully`;
+        console.log(this.status);
       },
-      error: error=> {
+      error: (error) => {
         this.status = error.message;
-        console.log('Error', error)
-      }
-    })
+        console.log('Error', error);
+      },
+    });
   }
 }

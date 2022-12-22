@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +11,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent {
   // Adding FormGroup to a variable so we can use it on ngOnInit
   formRegister: FormGroup = new FormGroup({});
+  error:boolean = false
 
-  constructor() {}
+  constructor(
+    private _authService: AuthService,
+    private router: Router
+
+  ) {}
 
   ngOnInit(): void {
     this.formRegister = new FormGroup({
@@ -44,6 +51,23 @@ export class RegisterComponent {
 
   sendRegister():void {
     const body = this.formRegister.value;
-    console.log(body)
+    let {email, password} = body;
+    
+
+    // Sending the data to the api call
+    this._authService.sendCredentials(email, password, "register").subscribe({
+      // If evrything goes well
+      next: (res) => {
+        const { token } = res
+        localStorage.setItem("token", token)
+        this.router.navigate(["/users"])
+      },
+      // If something goes wrong
+      error: (error) => {
+        console.log(error);
+        this.error = !this.error;
+      },
+    });
+
   }
 }

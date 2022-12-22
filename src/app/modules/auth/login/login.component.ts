@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { OnTokenService } from '@shared/services/on-token.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,11 @@ export class LoginComponent {
   // Adding FormGroup to a variable so we can use it on ngOnInit
   formLogin: FormGroup = new FormGroup({});
 
+  error: boolean = false;
+
   constructor(
     private _authService: AuthService,
-    private onTokenService: OnTokenService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,13 +39,21 @@ export class LoginComponent {
 
   sendLogin(): void {
     // setting the body value to pass it to the API using the values stored in formLogin
-    const body = this.formLogin.value;
-    this._authService.sendCredentials(body);
+    const email = this.formLogin.value.email;
+    const password = this.formLogin.value.password;
+    this._authService.sendCredentials(email, password, "login").subscribe({
+      // If evrything goes well
+      next: (res) => {
+        const { token } = res
+        localStorage.setItem("token", token)
+        this.router.navigate(["/users"])
+      },
+      // If something goes wrong
+      error: (error) => {
+        console.log(error);
+        this.error = !this.error;
+      },
+    });
   }
 
-  sendToken(token: string): void {
-    // Sending token to header
-    console.log(token)
-    this.onTokenService.callback.emit(token);
-  }
 }

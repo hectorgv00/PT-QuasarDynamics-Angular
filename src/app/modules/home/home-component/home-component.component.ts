@@ -9,7 +9,6 @@ export class HomeComponentComponent {
 constructor(){}
 
 ngOnInit():void{
- console.log("aaa")
 }
 
 }

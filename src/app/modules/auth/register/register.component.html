@@ -6,6 +6,10 @@
   >
     <p class="ff-title white fs-medium">Register</p>
 
+    <div *ngIf="error" class="white">
+      <p class="ff-subTitle">Email or password invalid</p>
+    </div>
+
     <!-- By using formGroup in our form we are letting angular know that we want to use the FormGroup propierty, specifically the one saved into formLogin The ngSubmit launches the sendLogin function -->
     <form
     (ngSubmit)="sendRegister()"
