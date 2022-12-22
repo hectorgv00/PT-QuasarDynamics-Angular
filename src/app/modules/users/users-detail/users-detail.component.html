@@ -1,1 +1,33 @@
-<p>users-detail works!</p>
+<div class="vh-95 ">
+    <h2 class="ff-title fs-medium text-center black mt-5">
+      List of registered people
+    </h2>
+  
+    <div class="grid">
+  
+        <div *ngFor="let user of user" class="ulDesign bg-gradient white pointer" routerLink= "/users/{{user.id}}">
+      <div>
+          <p class="liDesign ff-title extraColor">First Name</p>
+          <p class="liDesign ff-subTitle">{{ user.first_name }}</p>
+        </div>
+        <div>
+          <p class="liDesign ff-title extraColor">Email</p>
+          <p class="liDesign ff-subTitle">{{ user.email }}</p>
+        </div>
+        <div>
+          <p class="liDesign ff-title extraColor">Id</p>
+          <p class="liDesign ff-subTitle">{{ user.id }}</p>
+        </div>
+        <div>
+          <p class="liDesign ff-title extraColor">Last Name</p>
+          <p class="liDesign ff-subTitle">{{ user.last_name }}</p>
+        </div>
+  
+        <div>
+          <p class="liDesign ff-title extraColor">Avatar</p>
+          <p class="liDesign ff-subTitle">{{ user.avatar }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -25,7 +25,6 @@ export class UsersComponent {
     this.userService.getAllUsers$()    
     .subscribe((r) => {
       this.userList = r;
-      console.log(r)
     });
   }
 
