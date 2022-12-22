@@ -16,21 +16,20 @@ export class UsersComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.receiptUsers$();
+      this.receiptUsers$();
+
   }
 
   receiptUsers$(): void {
     // We are receiving the data from the UserService and saving it into userList
-    this.userService.getAllUsers$().subscribe((r) => {
+    this.userService.getAllUsers$()    
+    .subscribe((r) => {
       this.userList = r;
       console.log(r)
     });
   }
 
 
-  sumOneToPage():void{
-  this.userService.sumOneToPage()
-  }
 
   ngOndestroy(): void {
     this.listObservers$.forEach((obs) => obs.unsubscribe);
