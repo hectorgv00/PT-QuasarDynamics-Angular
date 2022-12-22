@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserModel } from '@core/models/users.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
-import { map, } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-users-detail',
@@ -66,12 +66,13 @@ export class UsersDetailComponent {
     // We are sending the delete request to the api
     this.httpClient.delete(`${this.URL}users/${userIdParams}`).subscribe({
       next: (data) => {
+        // Faked user deleted as in this api users cannot be deleted
         this.status = `User with ID => [${userIdParams}] Deleted successfully`;
         console.log(this.status);
       },
       error: (error) => {
         this.status = error.message;
-        console.log('Error', error);
+        console.log('Error', this.status);
       },
     });
   }

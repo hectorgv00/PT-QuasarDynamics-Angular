@@ -1,6 +1,4 @@
 import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnTokenService } from '@shared/services/on-token.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,11 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   token: string | null = localStorage.getItem('token');
   headerToken: boolean = false;
 
-  constructor(
-    private router: Router, 
-    private onTokenService: OnTokenService,
-    private changeDetector: ChangeDetectorRef,
-    ) {}
+  constructor(    ) {}
 
   // Loads on init
   ngOnInit(): void {
@@ -46,6 +40,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ifToken(): void {
+    // this will change the HTML of the header depending on the existance of the token
     this.token ? (this.headerToken = true) : (this.headerToken = false);
   }
+
+
 }

@@ -60,6 +60,7 @@ export class RegisterComponent {
       next: (res) => {
         const { token } = res
         localStorage.setItem("token", token)
+        window.location.reload();
         this.router.navigate(["/users"])
       },
       // If something goes wrong

@@ -6,20 +6,19 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-    path:":id",
-    component:UsersDetailComponent,
-    canActivate: [SessionGuard]
-
+    path: ':id',
+    component: UsersDetailComponent,
+    canActivate: [SessionGuard],
   },
   {
-    path:"",
-    component:UsersComponent,
-    canActivate: [SessionGuard]
-  }
+    path: '',
+    component: UsersComponent,
+    canActivate: [SessionGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UsersRoutingModule { }
+export class UsersRoutingModule {}

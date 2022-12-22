@@ -21,13 +21,14 @@ export class UserService {
       map(({ data }: any) => {
         return data;
       }),
-      // We are sending the error by console in cse someyhing occurs
+      // We are sending the error by console in case someyhing occurs
       catchError((err) => {
-        console.log(`We tried to get the data but something went wrong. Error ===> `,err)
+        console.log(
+          `We tried to get the data but something went wrong. Error ===> `,
+          err
+        );
         return of([]);
       })
     );
   }
-
-
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Output, EventEmitter } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,8 @@ import { Output, EventEmitter } from '@angular/core';
 export class LoginComponent {
   // Checking if there is a token
   token: string | null = localStorage.getItem('token');
+  
+  
 
 
   // Adding FormGroup to a variable so we can use it on ngOnInit
