@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserModel } from 'src/core/models/users.model';
+import { UserModel } from '@core/models/users.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
 import { map, } from 'rxjs';

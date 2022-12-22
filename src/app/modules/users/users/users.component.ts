@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { UserModel } from 'src/core/models/users.model';
+import { UserModel } from '@core/models/users.model';
 import { UserService } from '../services/user.service';
 
 @Component({
