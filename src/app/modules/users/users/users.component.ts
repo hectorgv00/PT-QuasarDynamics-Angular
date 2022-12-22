@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserModel } from 'src/core/models/users.model';
-import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -28,6 +28,8 @@ export class UsersComponent {
       console.log(r)
     });
   }
+
+
 
 
 

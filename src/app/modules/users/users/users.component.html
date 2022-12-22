@@ -4,8 +4,9 @@
   </h2>
 
   <div class="grid">
-    <div *ngFor="let user of userList" class="ulDesign bg-gradient white">
-      <div>
+
+      <div *ngFor="let user of userList" class="ulDesign bg-gradient white pointer" routerLink= "/users/{{user.id}}">
+    <div>
         <p class="liDesign ff-title extraColor">First Name</p>
         <p class="liDesign ff-subTitle">{{ user.first_name }}</p>
       </div>
