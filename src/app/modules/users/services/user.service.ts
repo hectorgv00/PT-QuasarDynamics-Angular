@@ -10,6 +10,8 @@ export class UserService {
   private readonly URL = environment.api;
   protected page = 1;
 
+  public userId = 1;
+
   constructor(private httpClient: HttpClient) {}
 
   // This function will use an observable to share the result (as redux)
@@ -26,4 +28,6 @@ export class UserService {
       })
     );
   }
+
+
 }
