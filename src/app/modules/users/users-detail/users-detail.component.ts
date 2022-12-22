@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from '@core/models/users.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../services/user.service';
@@ -20,7 +20,8 @@ export class UsersDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit(): any {
@@ -75,5 +76,8 @@ export class UsersDetailComponent {
         console.log('Error', this.status);
       },
     });
+
+    this.router.navigate(['/users']);
+
   }
 }
