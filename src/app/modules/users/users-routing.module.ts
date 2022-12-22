@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SessionGuard } from '@core/guards/session.guard';
+import { SessionGuard } from '@core/guards/session/session.guard';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
 import { UsersComponent } from './users/users.component';
 

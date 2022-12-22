@@ -1,11 +1,10 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OnTokenService {
+  callback: EventEmitter<any> = new EventEmitter<any>();
 
-  callback:EventEmitter<any> = new EventEmitter<any>
-
-  constructor() { }
+  constructor() {}
 }

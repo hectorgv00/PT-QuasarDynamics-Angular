@@ -12,9 +12,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SessionGuard implements CanActivate {
+  // getting the token from localStorage
   token: string | null = localStorage.getItem('token');
 
-  constructor(private router:Router) {}
+  constructor(private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -32,7 +33,7 @@ export class SessionGuard implements CanActivate {
     if (this.token !== null) {
       return true;
     } else {
-      this.router.navigate(["/"])
+      this.router.navigate(['/']);
       return false;
     }
   }

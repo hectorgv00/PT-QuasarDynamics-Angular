@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  // Checking if there is a token
+  token: string | null = localStorage.getItem('token');
+
+
   // Adding FormGroup to a variable so we can use it on ngOnInit
   formLogin: FormGroup = new FormGroup({});
 
+  // If error is true, shows a error message in the page
   error: boolean = false;
 
-  constructor(
-    private _authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private _authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     // Setting the inputs our form has
@@ -41,12 +43,13 @@ export class LoginComponent {
     // setting the body value to pass it to the API using the values stored in formLogin
     const email = this.formLogin.value.email;
     const password = this.formLogin.value.password;
-    this._authService.sendCredentials(email, password, "login").subscribe({
+    this._authService.sendCredentials(email, password, 'login').subscribe({
       // If evrything goes well
       next: (res) => {
-        const { token } = res
-        localStorage.setItem("token", token)
-        this.router.navigate(["/users"])
+        const { token } = res;
+        localStorage.setItem('token', token);
+        window.location.reload();
+        this.router.navigate(['/users']);
       },
       // If something goes wrong
       error: (error) => {
@@ -55,5 +58,6 @@ export class LoginComponent {
       },
     });
   }
+
 
 }

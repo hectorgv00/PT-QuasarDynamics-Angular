@@ -1,59 +1,54 @@
-.loginBoxDesign{
-    width: 30vw;
+.loginBoxDesign {
+  width: 30vw;
+  height: 80vh;
+  border-radius: 50px;
+}
+
+.formDesign {
+  height: 30%;
+}
+
+.inputDesign {
+  width: 20vw;
+  height: 4vh;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+.buttonDesign {
+  width: 5vw;
+  height: 4vh;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .loginBoxDesign {
+    width: 80vw;
     height: 80vh;
-    border-radius: 50px;
-}
+  }
 
-.formDesign{
-    height: 30%;
-}
-
-.inputDesign{
-    width: 20vw;
+  .inputDesign {
+    width: 60vw;
     height: 4vh;
     border-radius: 10px;
     text-indent: 10px;
+  }
 
-}
-
-.buttonDesign{
-    width: 5vw;
+  .buttonDesign {
+    width: 30vw;
     height: 4vh;
     border-radius: 10px;
-}
-
-
-@media (max-width:600px) {
-    .loginBoxDesign{
-        width: 80vw;
-        height: 80vh;
-    }
-
-    .inputDesign{
-        width: 60vw;
-        height: 4vh;
-        border-radius: 10px;
-        text-indent: 10px;
-    
-    }
-    
-    .buttonDesign{
-        width: 30vw;
-        height: 4vh;
-        border-radius: 10px;
-    }
-    
+  }
 }
 
 /* Setting styles to inform the user that there is something wrong with the info he/she has inserted in the input */
 
-input.ng-invalid.ng-touched{
-    background-color:  rgb(237, 55, 55) !important;
-    text-indent: white;
+input.ng-invalid.ng-touched {
+  background-color: rgb(237, 55, 55) !important;
+  text-indent: white;
 }
 
 input.ng-invalid.ng-touched::placeholder {
-    color: white;
-    opacity: 1; 
-  }
-  
+  color: white;
+  opacity: 1;
+}

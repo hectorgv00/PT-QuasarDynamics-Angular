@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotokenGuard } from '@core/guards/notoken/notoken.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
     path: "login",
-    component:LoginComponent
+    component:LoginComponent,
+    canActivate: [NotokenGuard]
+
   },
   {
     path: "register",
-    component:RegisterComponent
+    component:RegisterComponent,
+    canActivate: [NotokenGuard]
+
   },
 ];
 
