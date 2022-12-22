@@ -40,7 +40,6 @@ export class UsersDetailComponent {
       res.map((r: any) => {
         if (r.id === userIdParams) {
           this.user = [r];
-          console.log(this.user);
         }
       });
     });
