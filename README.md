@@ -2,7 +2,7 @@
 
 ## Summary 👌
 
-This project, done using the JavasCript Framework Angular, version 15 and ingesting the API https://reqres.in/, I have created a user manager app, where the user can register, login, see the list of registered users and delete them.
+This project, done using the JavaScript Framework Angular, version 15 and ingesting the API https://reqres.in/, I have created a user manager app, where the user can register, login, see the list of registered users and delete them.
 
 [![HzDEKNf.md.png](https://iili.io/HzDEKNf.md.png)](https://freeimage.host/i/HzDEKNf)
 
